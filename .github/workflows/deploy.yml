@@ -6,7 +6,7 @@ on:
       - "html-version/**"
 workflow_dispatch:
 jobs:
-  deploy:
+ deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
