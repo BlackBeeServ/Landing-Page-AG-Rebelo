@@ -1,22 +1,20 @@
 name: Deploy via FTP (Locaweb)
-
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
     paths:
       - "html-version/**"
-  workflow_dispatch:
-
+workflow_dispatch:
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: FTP Deploy Locaweb
-        uses: locaweb/ftp-deploy@1.0.0
+      uses: locaweb/ftp-deploy@1.0.0
         with:
           host: ${{ secrets.HOST }}
           user: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
-          localDir: "html-version"
-          remoteDir: "public_html/comercial"
+     localDir: "html-version"
+   remoteDir: "public_html/comercial"
